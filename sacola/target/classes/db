@@ -1,0 +1,45 @@
+-- Criar o banco de dados
+CREATE DATABASE e_commerce;
+USE e_commerce;
+
+-- Tabela de Usuários
+CREATE TABLE usuarios (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    senha VARCHAR(255) NOT NULL
+);
+
+-- Tabela de Lojas
+CREATE TABLE lojas (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    endereco VARCHAR(255)
+);
+
+-- Tabela de Produtos
+CREATE TABLE produtos (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    descricao TEXT,
+    preco DECIMAL(10, 2) NOT NULL,
+    id_loja INT,
+    FOREIGN KEY (id_loja) REFERENCES lojas(id)
+);
+
+-- Tabela de Carrinhos
+CREATE TABLE carrinhos (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    id_usuario INT,
+    FOREIGN KEY (id_usuario) REFERENCES usuarios(id)
+);
+
+-- Tabela de Itens do Carrinho
+CREATE TABLE itens_carrinho (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    id_carrinho INT,
+    id_produto INT,
+    quantidade INT NOT NULL,
+    FOREIGN KEY (id_carrinho) REFERENCES carrinhos(id),
+    FOREIGN KEY (id_produto) REFERENCES produtos(id)
+);
