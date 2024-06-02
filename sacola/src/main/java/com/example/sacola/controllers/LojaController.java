@@ -17,6 +17,7 @@ import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/lojas")
+@CrossOrigin("*")
 public class LojaController {
     @Autowired
     private LojaService lojaService;

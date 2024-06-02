@@ -12,6 +12,7 @@ import java.util.NoSuchElementException;
 
 @RestController
 @RequestMapping("/usuarios")
+@CrossOrigin("*")
 public class UsuarioController {
     @Autowired
     private UsuarioService usuarioService;
@@ -25,8 +26,13 @@ public class UsuarioController {
         }
     }
     @PostMapping("/login")
-    public Usuario login(@RequestBody Usuario usuario) {
-        return usuarioService.login(usuario.getEmail(), usuario.getSenha());
+    public ResponseEntity<?> login(@RequestBody Usuario usuario) {
+        Usuario usuarioLogado = usuarioService.login(usuario.getEmail(), usuario.getSenha());
+        if (usuarioLogado != null) {
+            return new ResponseEntity<>(usuarioLogado, HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>("Usuário não encontrado ou senha incorreta", HttpStatus.UNAUTHORIZED);
+        }
     }
     //criacao de lojas
     @PostMapping("/{usuarioId}/lojas")
