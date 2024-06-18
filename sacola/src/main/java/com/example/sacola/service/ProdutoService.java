@@ -61,5 +61,9 @@ public class ProdutoService {
         produto.setPreco(produtoAtualizado.getPreco());
         return produtoRepository.save(produto);
     }
+    public void deletarProdutosPorLoja(Long lojaId) {
+        List<Produto> produtos = produtoRepository.findByLojaId(lojaId);
+        produtoRepository.deleteAll(produtos);
+    }
 
 }

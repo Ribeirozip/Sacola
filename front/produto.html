@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Criar Produto</title>
+<link rel="stylesheet" href="css/style1.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Criar Produto</h1>
+            <nav>
+                <ul>
+                    <li><a href="main.html">Home</a></li>
+                    <li><a href="produtos.html">Produtos</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                    <li><a href="minhaloja.html">Minha Loja</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="criar-produto">
+        <div class="container">
+            <h2>Criar Novo Produto</h2>
+            <form id="form-criar-produto">
+                <label for="nome">Nome do Produto:</label>
+                <input type="text" id="nome" name="nome" required>
+
+                <label for="preco">Preço:</label>
+                <input type="number" id="preco" name="preco" step="0.01" required>
+
+                <label for="descricao">Descrição:</label>
+                <textarea id="descricao" name="descricao" required></textarea>
+
+                <button type="submit">Criar Produto</button>
+            </form>
+        </div>
+    </section>
+
+    <section id="lista-produtos" class="container">
+        <h2>Produtos da Loja</h2>
+        <div id="lista-produtos-container"></div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Minha Sacola</p>
+        </div>
+    </footer>
+
+    <script src="js/scripts1.js"></script>
+</body>
+</html>

@@ -45,6 +45,11 @@ public class LojaService {
         Loja loja = lojaRepository.findById(lojaId)
                 .orElseThrow(() -> new NoSuchElementException("Loja não encontrada"));
 
+        // Excluir todos os produtos da loja
+        produtoService.deletarProdutosPorLoja(lojaId);
+
+        // Excluir a loja
         lojaRepository.delete(loja);
     }
+
 }

@@ -1,0 +1,42 @@
+/* Adicione seu CSS existente aqui */
+
+/* Estilos adicionais para a página minhaloja.html */
+.cadastrar-loja, .lojas-cadastradas {
+    margin: 20px 0;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+}
+
+input {
+    display: block;
+    margin-bottom: 10px;
+    width: 100%;
+    padding: 8px;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#lista-lojas {
+    margin-top: 20px;
+}
+
+.loja-item {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+}

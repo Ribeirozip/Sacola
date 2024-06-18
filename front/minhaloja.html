@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Minha Loja</title>
+<link rel="stylesheet" href="css/style.css">
+<script defer src="js/scripts.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Crie sua Loja</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="produto.html">Produtos</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                    <li><a href="minhaloja.html" class="botao-crie-sua-loja">Crie sua loja</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="cadastrar-loja">
+        <div class="container">
+            <h2>Cadastrar Loja</h2>
+            <form id="form-cadastrar-loja">
+                <label for="nome">Nome da Loja:</label>
+                <input type="text" id="nome" name="nome" required>
+
+                <label for="endereco">Endereço:</label>
+                <input type="text" id="endereco" name="endereco" required>
+
+                <button type="submit">Cadastrar</button>
+            </form>
+        </div>
+    </section>
+
+    <section class="lojas-cadastradas">
+        <div class="container">
+            <h2>Lojas Cadastradas</h2>
+            <div id="lista-lojas"></div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Meu Sacola</p>
+        </div>
+    </footer>
+</body>
+</html>
